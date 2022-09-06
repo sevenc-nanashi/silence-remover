@@ -46,6 +46,7 @@ jobs:
       - name: Deploy
         run: |
           git switch -c deploy
+          git config --global pull.rebase false
           git pull origin deploy
           git rm -rf .
           git add -A
