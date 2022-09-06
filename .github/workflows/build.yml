@@ -47,7 +47,7 @@ jobs:
         run: |
           git switch -c deploy
           git config --global pull.rebase false
-          git pull origin deploy
+          git pull origin deploy --allow-unrelated-histories
           git rm -rf .
           git add -A
           cp -r /tmp/dist .
