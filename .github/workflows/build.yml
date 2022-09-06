@@ -45,9 +45,8 @@ jobs:
 
       - name: Deploy
         run: |
-          git config pull.rebase false
-          git pull origin deploy:deploy
-          git switch deploy
+          git switch -c deploy
+          git pull origin deploy
           git rm -rf .
           git add -A
           cp -r /tmp/dist .
