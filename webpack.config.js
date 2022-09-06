@@ -9,8 +9,6 @@ const child_process = require("child_process")
 
 const isProduction = process.env.NODE_ENV == "production"
 
-const commitSha = isProduction ? child_process.execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim() : "dev"
-
 const stylesHandler = isProduction
   ? MiniCssExtractPlugin.loader
   : "style-loader"
@@ -33,9 +31,6 @@ const config = {
     new HtmlWebpackPlugin({
       template: "index.html",
     }),
-    new DefinePlugin({
-      COMMIT_SHA: JSON.stringify(commitSha)
-    })
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/

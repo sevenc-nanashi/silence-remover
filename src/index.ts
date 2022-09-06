@@ -6,8 +6,6 @@ import "./styles/index.scss"
 
 const ffmpeg = createFFmpeg({ log: true })
 
-declare const COMMIT_SHA: string // Webpackで追加される
-
 Vue.createApp({
   data() {
     return {
@@ -18,7 +16,6 @@ Vue.createApp({
         name: "-",
       },
       formActive: false,
-      commit_sha: COMMIT_SHA,
     }
   },
   async mounted() {
