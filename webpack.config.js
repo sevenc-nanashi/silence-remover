@@ -19,6 +19,7 @@ const config = {
   entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
+    filename: "js/[fullhash].js",
   },
   devServer: {
     open: true,

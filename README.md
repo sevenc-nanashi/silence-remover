@@ -1,15 +1,12 @@
-# 🚀 Welcome to your new awesome project!
+# silence-remover / 先頭無音削除ツール
 
-This project has been created using **webpack-cli**, you can now run
+ffmpeg.wasmを使い、先頭の無音区間を削除するアプリ。
 
-```
-npm run build
-```
+## ホスト
 
-or
+`pnpm build`でwebpackのビルドが走ります。
+`pnpm start`でwebpackのビルドが走り、Expressサーバーが起動します。
 
-```
-yarn build
-```
+## ライセンス
 
-to bundle your application
+MITライセンスで公開されています。
