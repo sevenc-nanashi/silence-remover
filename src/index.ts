@@ -35,7 +35,8 @@ Vue.createApp({
       try {
         const startTime = performance.now()
         const filename = this.$refs.originalAudio.files[0].name
-        const newFilename = filename.replace(/(\.[^.]+)$/, "_new$1")
+        const noiseCount = this.$refs.noiseCount.value as number
+        const newFilename = filename.replace(/(\.[^.]+)$/, "_cut$1")
         this.log("Started")
         this.download.active = false
         this.download.url = ""
@@ -58,7 +59,7 @@ Vue.createApp({
           "-i",
           filename,
           "-af",
-          "silenceremove=start_periods=1:start_duration=5:start_threshold=0.02",
+          `silenceremove=start_periods=1:start_duration=${noiseCount}:start_threshold=0.02`,
           newFilename
         )
         // const newData = await newZip.generateAsync({

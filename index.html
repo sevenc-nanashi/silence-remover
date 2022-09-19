@@ -23,6 +23,8 @@
     <form action="#" id="form" v-on:submit="processFile">
       <fieldset id="fieldset" v-bind:disabled="!formActive">
         <input class="form-control" type="file" accept="audio/*" id="base" required ref="originalAudio" />
+        無視するノイズの数
+        <input class="form-control" type="number" id="noise-count" min="0" max="100" value="0" required ref="noiseCount"/>
 
         <div class="pt-4">
           <button class="btn btn-primary" type="submit" id="start">
